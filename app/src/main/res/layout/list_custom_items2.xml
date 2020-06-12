@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/peachy"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/fooditem"
+        android:layout_width="319dp"
+        android:layout_height="99dp"
+        android:layout_gravity="center_vertical"
+
+        android:drawableLeft="@drawable/ic_baseline_fastfood_24"
+        android:drawablePadding="30dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:text="Food Item"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/calValue"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+
+        android:paddingLeft="15dp"
+
+        android:textColor="?attr/colorButtonNormal"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+
+</LinearLayout>

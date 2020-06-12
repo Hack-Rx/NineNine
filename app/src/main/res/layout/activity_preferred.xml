@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorButtonNormal"
-    tools:context=".Suggestions">
+    tools:context=".Preferred">
 
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listView2"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
 
@@ -27,7 +27,7 @@
     </ListView>
 
     <com.leo.simplearcloader.SimpleArcLoader
-        android:id="@+id/loader1"
+        android:id="@+id/loader2"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerInParent="true"

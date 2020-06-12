@@ -82,6 +82,9 @@ public class Home extends AppCompatActivity {
                     case R.id.logout:
                         startActivity(new Intent(Home.this,Login.class));
                         break;
+                    case R.id.personalization:
+                        startActivity(new Intent(Home.this,Personalization.class));
+                        break;
                 }
 
             return true;
