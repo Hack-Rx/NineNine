@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "660307548586",
+    "firebase_url": "https://ninenine-c873e.firebaseio.com",
+    "project_id": "ninenine-c873e",
+    "storage_bucket": "ninenine-c873e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660307548586:android:cb5b3e54d59ac7f4b073d3",
+        "android_client_info": {
+          "package_name": "com.example.ninenine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660307548586-3oloh8p1jmihkov31p4h3vp70dvev506.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ninenine",
+            "certificate_hash": "78d786a8126c0f493f2cd126a668610bbdb84683"
+          }
+        },
+        {
+          "client_id": "660307548586-d9oc8jf8t4klee1rahkfsl97tndgg3n2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ninenine",
+            "certificate_hash": "114b8865f9173240f11dc402afe6ac4c1649776d"
+          }
+        },
+        {
+          "client_id": "660307548586-22s8t1rigrfa0e2trqibkfq93ur0foof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5P1p3YYtrK0cqtwy3Lvoap3p3FSQ1L1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660307548586-22s8t1rigrfa0e2trqibkfq93ur0foof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

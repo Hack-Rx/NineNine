@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundddd"
+    tools:context=".Details">
+
+    <TextView
+        android:id="@+id/heightVal"
+        android:layout_width="130dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="140dp"
+        android:text="0 Cm"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/height"
+        app:layout_constraintTop_toTopOf="@+id/height"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="137dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="13dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="Height:"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/seekHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="93dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="Gender:"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/height"
+        app:layout_constraintEnd_toStartOf="@+id/RadGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
+
+    <TextView
+        android:id="@+id/weightVal"
+        android:layout_width="144dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="53dp"
+        android:text="0 Kg"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/seekWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/weight"
+        app:layout_constraintTop_toBottomOf="@+id/seekHeight"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="144dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="3dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="Weight:"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/seekWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekHeight" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="246dp"
+        android:layout_height="106dp"
+        android:text="Enter Details"
+        android:textColor="@color/design_default_color_secondary_variant"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009"
+        tools:layout_editor_absoluteX="74dp" />
+
+    <SeekBar
+        android:id="@+id/seekHeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height" />
+
+    <SeekBar
+        android:id="@+id/seekWeight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight" />
+
+    <RadioGroup
+        android:id="@+id/RadGroup"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="132dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heightVal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gender"
+        app:layout_constraintTop_toTopOf="@+id/Title">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/side_nav_bar"
+        android:text="Done"
+        app:layout_constraintBottom_toTopOf="@+id/editBmi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekWeight" />
+
+    <Button
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/side_nav_bar"
+        android:text="Next"
+        app:layout_constraintBottom_toTopOf="@+id/editBmi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekWeight" />
+
+    <ProgressBar
+        android:id="@+id/bmiBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBmi" />
+
+    <TextView
+        android:id="@+id/editBmi"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="4dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="BMI"
+        android:textSize="18sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/bmiBar"
+        app:layout_constraintStart_toStartOf="@+id/bmiBar"
+        app:layout_constraintTop_toBottomOf="@+id/Done" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
