@@ -35,7 +35,7 @@ public class Preferred extends AppCompatActivity {
     ListView listView=null;
     SimpleArcLoader simpleArcLoader=null;
 
-    public List<CalorieCount>  calorieCountList2;
+    public static List<CalorieCount>  calorieCountList2;
     CalorieCount caloriecount;
     MyCustomAdapter2 myCustomAdapter;
 
