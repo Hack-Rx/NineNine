@@ -49,8 +49,8 @@ public class Preferred extends AppCompatActivity {
         Intent intent = getIntent();
         positionFood = intent.getIntExtra("position", 0);
         edtSearch = findViewById(R.id.edtSearch);
-        listView = findViewById(R.id.listView1);
-        simpleArcLoader = findViewById(R.id.loader1);
+        listView = findViewById(R.id.listView2);
+        simpleArcLoader = findViewById(R.id.loader2);
         calorieCountList2 = new ArrayList<>();
 
         getSupportActionBar().setTitle("Food Item");
@@ -69,7 +69,7 @@ public class Preferred extends AppCompatActivity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    startActivity(new Intent(Preferred.this,DetailActivity.class).putExtra("position",position));
+                    startActivity(new Intent(Preferred.this,DetailActivity2.class).putExtra("position",position));
                 }
             });
 
@@ -154,7 +154,7 @@ public class Preferred extends AppCompatActivity {
 
                                 String foodid = jsonObject.getString("item_id");
                                 String fooditem = jsonObject.getString("item_name");
-                                //System.out.println(fooditem);
+                                System.out.println(fooditem);
                                 String calories = jsonObject.getString("nf_calories");
                                 String caloriesfromfat = jsonObject.getString("nf_calories_from_fat");
 
@@ -165,16 +165,12 @@ public class Preferred extends AppCompatActivity {
                                 float x= Float.parseFloat(calories);
 
                                 caloriecount= new CalorieCount(foodid,fooditem,calories,caloriesfromfat,protein,serve,brand);
-                                try {
+
                                         if(Float.parseFloat(Personalization.pc)<=x){
+                                            System.out.println(Float.parseFloat(Personalization.pc));
                                             calorieCountList2.add(caloriecount);
                                         }
 
-
-                                }
-                                catch (NullPointerException ignored){
-
-                                }
 
                             }
 

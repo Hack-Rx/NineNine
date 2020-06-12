@@ -43,7 +43,7 @@ public class details1 extends AppCompatActivity {
         positionFood = intent.getIntExtra("position",0);
         fStore = FirebaseFirestore.getInstance();
 
-        getSupportActionBar().setTitle("Details of "+Suggestions.calorieCountList1.get(positionFood).getFooditem());
+        getSupportActionBar().setTitle("Details of "+Calories.calorieCountList.get(positionFood).getFooditem());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
