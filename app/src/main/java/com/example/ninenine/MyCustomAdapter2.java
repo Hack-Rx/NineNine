@@ -20,7 +20,7 @@ public class MyCustomAdapter2 extends ArrayAdapter<CalorieCount> {
     private List<CalorieCount> FoodItemFiltered;
 
     public MyCustomAdapter2( Context context, List<CalorieCount> FoodItem) {
-        super(context, R.layout.list_custom_items,FoodItem);
+        super(context, R.layout.list_custom_items2,FoodItem);
 
         this.context = context;
         this.FoodItem = FoodItem;
@@ -95,7 +95,7 @@ public class MyCustomAdapter2 extends ArrayAdapter<CalorieCount> {
             protected void publishResults(CharSequence constraint, FilterResults results) {
 
                 FoodItemFiltered = (List<CalorieCount>) results.values;
-                Suggestions.calorieCountList1 = (List<CalorieCount>) results.values;
+                Preferred.calorieCountList2= (List<CalorieCount>) results.values;
                 notifyDataSetChanged();
 
             }

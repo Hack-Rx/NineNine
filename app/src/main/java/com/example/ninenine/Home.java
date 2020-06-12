@@ -1,5 +1,6 @@
 package com.example.ninenine;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 //import org.eazegraph.lib.charts.PieChart;
@@ -81,6 +83,20 @@ public class Home extends AppCompatActivity {
                         break;
                     case R.id.logout:
                         startActivity(new Intent(Home.this,Login.class));
+
+
+
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(Home.this);
+                        builder1.setTitle("Are you sure you want to Log Out?");
+                        builder1.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(Home.this, Login.class));
+
+                            }
+                        });
+                        builder1.setNegativeButton("Yes", null);
+                        builder1.show();
                         break;
                     case R.id.personalization:
                         startActivity(new Intent(Home.this,Personalization.class));

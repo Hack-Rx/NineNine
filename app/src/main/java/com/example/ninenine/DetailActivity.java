@@ -72,8 +72,25 @@ public class DetailActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addToDatabase();
-                addDayCalToDatabase();
+                add.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(DetailActivity.this);
+                        builder1.setTitle("Are you sure you want to add?");
+                        builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                addToDatabase();
+                                addDayCalToDatabase();
+
+                            }
+                        });builder1.setNegativeButton("No",null);
+                        builder1.show();
+
+
+                    }
+                });
 
             }
         });

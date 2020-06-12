@@ -76,8 +76,6 @@ public class DetailActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(DetailActivity2.this);
                 builder1.setTitle("Are you sure you want to add?");
-
-                builder1.setView(input);
                 builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
