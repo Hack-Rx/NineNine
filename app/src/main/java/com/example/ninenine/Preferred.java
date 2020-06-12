@@ -168,8 +168,6 @@ public class Preferred extends AppCompatActivity {
                                             calorieCountList2.add(caloriecount);
 
                                         }
-
-
                             }
 
                             myCustomAdapter = new MyCustomAdapter2(Preferred.this,calorieCountList2);

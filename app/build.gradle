@@ -42,6 +42,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    aaptOptions{
+        noCompress="tflite "
+    }
 
 }
 
@@ -77,10 +80,12 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'
     implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
+    implementation 'com.google.firebase:firebase-ml-vision-automl:18.0.5'
     implementation 'com.google.firebase:firebase-ml-vision-image-label-model:20.0.1'
     implementation 'com.wonderkiln:camerakit:0.13.1'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
     implementation 'com.google.mlkit:image-labeling:16.0.0'
+    implementation 'com.google.mlkit:linkfirebase:16.0.0'
 
 
 }

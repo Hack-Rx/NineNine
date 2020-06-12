@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ public class Calories extends AppCompatActivity {
     EditText edtSearch;
     ListView listView;
     SimpleArcLoader simpleArcLoader;private int calss;
+    ImageButton camButton;
+    static String camSearch="";
 
 
     public static List<CalorieCount> calorieCountList;
@@ -51,10 +54,20 @@ public class Calories extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         simpleArcLoader = findViewById(R.id.loader);
         calorieCountList= new ArrayList<>();
+        camButton=findViewById(R.id.camButton);
+
+        edtSearch.setText(""+camSearch);
 
         getSupportActionBar().setTitle("Food Item");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        camButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Calories.this,Camitem.class));
+            }
+        });
 
         fetchData();
           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,7 +81,6 @@ public class Calories extends AppCompatActivity {
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
 
             }
 
