@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/fooditem"
-        android:layout_width="319dp"
+        android:layout_width="290dp"
         android:layout_height="99dp"
         android:layout_gravity="center_vertical"
 
@@ -30,7 +30,7 @@
 
         android:paddingLeft="15dp"
 
-        android:textColor="?attr/colorButtonNormal"
+        android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="italic" />
 

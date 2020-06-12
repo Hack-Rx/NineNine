@@ -20,7 +20,7 @@ public class MyCustomAdapter2 extends ArrayAdapter<CalorieCount> {
     private List<CalorieCount> FoodItemFiltered;
 
     public MyCustomAdapter2( Context context, List<CalorieCount> FoodItem) {
-        super(context, R.layout.list_custom_items2,FoodItem);
+        super(context, R.layout.list_custom_items,FoodItem);
 
         this.context = context;
         this.FoodItem = FoodItem;
@@ -32,9 +32,10 @@ public class MyCustomAdapter2 extends ArrayAdapter<CalorieCount> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_custom_items,null,true);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_custom_items2,null,true);
         TextView fooditem = view.findViewById(R.id.fooditem);
-
+        TextView calValue = view.findViewById(R.id.calValue);
+        calValue.setText((FoodItemFiltered.get(position).getCalories()));
         fooditem.setText(FoodItemFiltered.get(position).getFooditem()+","+FoodItemFiltered.get(position).getBrand());
         return view;
     }
@@ -95,7 +96,7 @@ public class MyCustomAdapter2 extends ArrayAdapter<CalorieCount> {
             protected void publishResults(CharSequence constraint, FilterResults results) {
 
                 FoodItemFiltered = (List<CalorieCount>) results.values;
-                Preferred.calorieCountList2= (List<CalorieCount>) results.values;
+                Preferred.calorieCountList2 = (List<CalorieCount>) results.values;
                 notifyDataSetChanged();
 
             }

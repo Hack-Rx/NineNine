@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -84,6 +85,7 @@ public class details1 extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 addToDatabase();
                                 addDayCalToDatabase();
+                Toast.makeText(details1.this, "Added Successfully", Toast.LENGTH_SHORT).show();
 
                             }
                         });builder1.setNegativeButton("No",null);

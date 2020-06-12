@@ -82,20 +82,16 @@ public class Home extends AppCompatActivity {
                         startActivity(new Intent(Home.this,Recomendation.class));
                         break;
                     case R.id.logout:
-                        startActivity(new Intent(Home.this,Login.class));
-
-
-
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(Home.this);
                         builder1.setTitle("Are you sure you want to Log Out?");
-                        builder1.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                        builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 startActivity(new Intent(Home.this, Login.class));
 
                             }
                         });
-                        builder1.setNegativeButton("Yes", null);
+                        builder1.setNegativeButton("No", null);
                         builder1.show();
                         break;
                     case R.id.personalization:

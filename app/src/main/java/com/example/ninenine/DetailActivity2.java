@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -76,11 +77,14 @@ public class DetailActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(DetailActivity2.this);
                 builder1.setTitle("Are you sure you want to add?");
+
+                //builder1.setView(input);
                 builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         addToDatabase();
                         addDayCalToDatabase();
+                        Toast.makeText(DetailActivity2.this, "Added Successfully", Toast.LENGTH_SHORT).show();
 
                     }
                 });builder1.setNegativeButton("No",null);
