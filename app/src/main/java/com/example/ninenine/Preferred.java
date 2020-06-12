@@ -33,10 +33,8 @@ public class Preferred extends AppCompatActivity {
 
     EditText edtSearch;private  int positionFood;
     ListView listView=null;
-    SimpleArcLoader simpleArcLoader=null;private int calss;
+    SimpleArcLoader simpleArcLoader=null;
 
-
-    // public List<CalorieCount> calorieCountList = new ArrayList<>();
     public List<CalorieCount>  calorieCountList2;
     CalorieCount caloriecount;
     MyCustomAdapter2 myCustomAdapter;
@@ -148,7 +146,6 @@ public class Preferred extends AppCompatActivity {
 
 
                             for(int i=0;i<jsonArray.length();i++){
-
                                 JSONObject jsonObject = jsonArray.getJSONObject(i).getJSONObject("fields");
 
 
@@ -166,9 +163,10 @@ public class Preferred extends AppCompatActivity {
 
                                 caloriecount= new CalorieCount(foodid,fooditem,calories,caloriesfromfat,protein,serve,brand);
 
-                                        if(Float.parseFloat(Personalization.pc)<=x){
-                                            System.out.println(Float.parseFloat(Personalization.pc));
+                                        if(Float.parseFloat(Personalization.pc)>=x){
+                                            System.out.println("here: "+Float.parseFloat(Personalization.pc));
                                             calorieCountList2.add(caloriecount);
+
                                         }
 
 
