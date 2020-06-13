@@ -12,6 +12,7 @@
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="10dp"
+        android:drawableLeft="@drawable/ic_baseline_emoji_food_beverage_24"
         android:drawablePadding="30dp"
         android:paddingLeft="36dp"
         android:text="Food Item"
