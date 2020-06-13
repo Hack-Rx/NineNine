@@ -282,16 +282,21 @@ public class Home extends AppCompatActivity {
                                     java.util.Date date1=new java.util.Date(System.currentTimeMillis());
                                     if(date1.getTime()-date.getTime()>82800000 && date1.getTime()-date.getTime()<90000000){
                                         final FoodItems item1=item;
-                                        gadd.setVisibility(View.VISIBLE);
-                                        gaddtext.setText("Yesterday at this time you had "+item.getFood_Name());
                                         item1.setTimestamp(date1);
                                         final DocumentReference documentReference = fStore.collection("users").document(Login.userID).collection("daily").document(Home.Date).collection("FoodItems").document(document.getId());
-                                        gadd.setOnClickListener(new View.OnClickListener() {
+
+                                        AlertDialog.Builder builder1 = new AlertDialog.Builder(Home.this);
+                                        builder1.setTitle("Yesterday at this time you had "+item.getFood_Name()+" do you want to add?");
+                                        builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                             @Override
-                                            public void onClick(View v) {
+                                            public void onClick(DialogInterface dialog, int which) {
                                                 documentReference.set(item1);
+
                                             }
                                         });
+                                        builder1.setNegativeButton("No", null);
+                                        builder1.show();
+
                                     }
                                     System.out.println(item.getFood_Name());
                                 }

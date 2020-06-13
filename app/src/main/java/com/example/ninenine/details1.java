@@ -31,7 +31,7 @@ public class details1 extends AppCompatActivity {
 
     String serveUnit = "";
     private  int positionFood;
-    TextView food_item,calories,calories_from_fat,protein,serveunit,brand,TotalCalories;
+    TextView food_item,calories,calories_from_fat,protein,serveunit,brand,TotalCalories,todayscal;
     Button qty,add;
     EditText input;
     FirebaseFirestore fStore;
@@ -57,6 +57,7 @@ public class details1 extends AppCompatActivity {
         serveunit = findViewById(R.id.serve_unit1);
         brand = findViewById(R.id.brand1);
         TotalCalories = findViewById(R.id.tvTotalCalories1);
+        todayscal=findViewById(R.id.tvTotalCalories11);
 
         food_item.setText(Calories.calorieCountList.get(positionFood).getFooditem());
         calories.setText(Calories.calorieCountList.get(positionFood).getCalories());
@@ -113,7 +114,7 @@ public class details1 extends AppCompatActivity {
                 if (snapshot != null && snapshot.exists()) {
                     System.out.println("Current data: " + snapshot.getData());
                     Home.dayTotal=Double.parseDouble(""+snapshot.get("Day_Total"));
-                    TotalCalories.setText("Total Calories: "+snapshot.get("Day_Total"));
+                    todayscal.setText("Today's calories: "+snapshot.get("Day_Total"));
                 } else {
                     System.out.println("Current data: null");
                 }            }
@@ -136,7 +137,8 @@ public class details1 extends AppCompatActivity {
                 String totalCal = Double.toString(totalcalories);
                 Home.dayTotal+=totalcalories;
                 try{
-                    TotalCalories.setText("Total Calories: "+Home.dayTotal);
+                    TotalCalories.setText("Total Calories: "+totalcalories);
+                    todayscal.setText("Today's calories: "+Home.dayTotal);
 
                 }catch(NullPointerException ignored){
 

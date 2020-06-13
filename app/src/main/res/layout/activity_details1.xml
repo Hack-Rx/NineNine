@@ -23,6 +23,18 @@
             android:text="Food Item"
             android:textSize="18sp"
             android:textStyle="bold" />
+        <TextView
+            android:id="@+id/food_item1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:fontFamily="sans-serif-light"
+
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
