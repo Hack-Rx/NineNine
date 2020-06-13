@@ -84,7 +84,7 @@ public class DetailActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 addToDatabase();
                                 addDayCalToDatabase();
-                Toast.makeText(DetailActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DetailActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
 
                             }
                         });builder1.setNegativeButton("No",null);

@@ -1,9 +1,11 @@
 package com.example.ninenine;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.telecom.Call;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -11,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,6 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Details extends AppCompatActivity {
@@ -32,7 +36,7 @@ public class Details extends AppCompatActivity {
     private TextView text_view2;
     public RadioButton radio_btn;
     public RadioGroup radio_group;
-    private Button done;
+    private Button done,next;
     public int height;
     public int weight;
     public String gender;
@@ -54,6 +58,7 @@ public class Details extends AppCompatActivity {
         text_view2 =(TextView)findViewById(R.id.weightVal);
         radio_group=findViewById(R.id.RadGroup);
         done=findViewById(R.id.Done);
+        next=findViewById(R.id.next);
         editBmi=findViewById(R.id.editBmi);
         bmiBar=findViewById(R.id.bmiBar);
 
@@ -63,11 +68,29 @@ public class Details extends AppCompatActivity {
         enterHeight();
         enterWeight();
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(),Home.class));
+            }
+        });
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addToDatabase();
-                startActivity(new Intent(getApplicationContext(),Home.class));
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(Details.this);
+                builder1.setTitle("Confirm details?");
+                builder1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        addToDatabase();
+                        //addDayCalToDatabase();
+                        Toast.makeText(Details.this, "Details confirmed", Toast.LENGTH_SHORT).show();
+
+                    }
+                });builder1.setNegativeButton("No",null);
+                builder1.show();
+
             }
         });
 
