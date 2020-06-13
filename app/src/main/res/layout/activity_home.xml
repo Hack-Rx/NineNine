@@ -18,15 +18,15 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="434dp"
-            android:layout_height="490dp"
+            android:layout_height="395dp"
             android:background="@drawable/dmax_spots_spot">
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/idPieChart"
-                android:layout_width="348dp"
-                android:layout_height="355dp"
+                android:layout_width="368dp"
+                android:layout_height="318dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="80dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginBottom="180dp">
 
             </com.github.mikephil.charting.charts.PieChart>
@@ -35,7 +35,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="150dp"
             android:orientation="horizontal">
 
             <TextView
@@ -52,21 +52,31 @@
                 android:text="Add" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/foodRecords"
-            android:layout_width="627dp"
-            android:layout_height="106dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:text="food records" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/DietSuggestions"
-            android:layout_width="618dp"
-            android:layout_height="104dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:text="Diet Suggestions" />
+            <Button
+                android:id="@+id/foodRecords"
+                android:layout_width="175dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:text="food records" />
+
+            <Button
+                android:id="@+id/DietSuggestions"
+                android:layout_width="175dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:text="Diet Suggestions" />
+        </LinearLayout>
 
 
     </LinearLayout>

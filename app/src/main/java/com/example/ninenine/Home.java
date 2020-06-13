@@ -2,7 +2,6 @@ package com.example.ninenine;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -249,10 +248,8 @@ public class Home extends AppCompatActivity {
         PieDataSet pieDataSet = new PieDataSet(yEntrys, "Calories");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
-        ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
-        colors.add(Color.DKGRAY);
-        pieDataSet.setColors(colors);
+
+        pieDataSet.setColors(new int[] {R.color.myblue,R.color.myred}, this);
 
         //add legend to chart
         Legend legend = pieChart.getLegend();

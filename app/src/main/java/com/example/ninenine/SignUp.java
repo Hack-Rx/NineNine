@@ -28,8 +28,6 @@ import java.util.Map;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-//import android.support.annotation.NonNull;import android.support.v7.app.AppCompatActivity;
-
 public class SignUp extends AppCompatActivity {
 
     public static final String TAG = "TAG";
@@ -60,10 +58,10 @@ public class SignUp extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
 
-        if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
+//        if(fAuth.getCurrentUser() != null){
+//            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+//            finish();
+//        }
 
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
