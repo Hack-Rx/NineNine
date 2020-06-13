@@ -14,7 +14,7 @@
         android:layout_height="332dp"
         android:layout_marginStart="4dp"
         android:background="?attr/colorButtonNormal"
-        android:focusedMonthDateColor="@color/design_default_color_secondary_variant"
+        android:focusedMonthDateColor="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,19 +35,19 @@
 
     <Button
         android:id="@+id/btnAddCal"
-        android:layout_width="66dp"
-        android:layout_height="55dp"
-        android:background="@android:drawable/ic_menu_add"
+        android:layout_width="56dp"
+        android:layout_height="43dp"
+        android:background="@drawable/plus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.997"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="238dp"
-        android:layout_height="34dp"
+        android:layout_width="229dp"
+        android:layout_height="27dp"
         android:fontFamily="sans-serif-black"
         android:text="CALORIES FOR THE DAY:"
         android:textColor="@android:color/holo_blue_dark"
@@ -71,6 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/myblue"
     tools:context=".Recomendation">
 
     <TextView
@@ -43,6 +44,7 @@
         android:id="@+id/recyclerView2"
         android:layout_width="403dp"
         android:layout_height="552dp"
+        android:background="@color/myblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
