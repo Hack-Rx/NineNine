@@ -5,45 +5,37 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="true">
     tools:context=".Home"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/colorButtonNormal"
+        android:background="@drawable/homebacgkround"
         android:orientation="vertical">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/design_default_color_secondary_variant"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="434dp"
             android:layout_height="490dp"
-            android:background="?attr/colorButtonNormal">
+            android:background="@drawable/dmax_spots_spot">
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/idPieChart"
-                android:layout_width="408dp"
-                android:layout_height="370dp"
+                android:layout_width="348dp"
+                android:layout_height="355dp"
                 android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginBottom="180dp">
 
             </com.github.mikephil.charting.charts.PieChart>
         </FrameLayout>
 
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -62,21 +54,23 @@
 
         <Button
             android:id="@+id/foodRecords"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="627dp"
+            android:layout_height="106dp"
             android:layout_marginTop="10dp"
-            android:background="@color/design_default_color_secondary_variant"
+            android:background="@android:drawable/editbox_background"
             android:text="food records" />
 
         <Button
             android:id="@+id/DietSuggestions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="618dp"
+            android:layout_height="104dp"
             android:layout_marginTop="10dp"
-            android:background="@color/design_default_color_secondary_variant"
+            android:background="@android:drawable/editbox_background"
             android:text="Diet Suggestions" />
 
+
     </LinearLayout>
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
