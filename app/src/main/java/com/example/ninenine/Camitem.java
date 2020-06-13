@@ -16,6 +16,7 @@ import com.google.firebase.ml.common.FirebaseMLException;
 import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions;
 import com.google.firebase.ml.common.modeldownload.FirebaseModelManager;
 import com.google.firebase.ml.vision.FirebaseVision;
+import com.google.firebase.ml.vision.automl.FirebaseAutoMLLocalModel;
 import com.google.firebase.ml.vision.automl.FirebaseAutoMLRemoteModel;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.label.FirebaseVisionImageLabel;
@@ -38,6 +39,7 @@ public class Camitem extends AppCompatActivity {
     Button btnDetect;
     AlertDialog waitingDialog;
     FirebaseAutoMLRemoteModel remoteModel;
+    FirebaseAutoMLLocalModel localModel;
     FirebaseVisionImageLabeler labler;
     FirebaseVisionOnDeviceAutoMLImageLabelerOptions.Builder optionsBuilder;
     ProgressDialog progressDialog;
@@ -102,7 +104,7 @@ public class Camitem extends AppCompatActivity {
     }
     public void showProgressBar(){
         progressDialog=new ProgressDialog(Camitem.this);
-        progressDialog.setMessage("PLease wait...");
+        progressDialog.setMessage("Please wait...");
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
 
@@ -123,8 +125,12 @@ public class Camitem extends AppCompatActivity {
         FirebaseModelManager.getInstance().isModelDownloaded(remoteModel).addOnSuccessListener(new OnSuccessListener<Boolean>() {
             @Override
             public void onSuccess(Boolean isDownloaded) {
-                if(isDownloaded){
-                    optionsBuilder=new FirebaseVisionOnDeviceAutoMLImageLabelerOptions.Builder(remoteModel);
+                if(isDownloaded) {
+                    optionsBuilder = new FirebaseVisionOnDeviceAutoMLImageLabelerOptions.Builder(remoteModel);
+                }
+                else{
+                    optionsBuilder = new FirebaseVisionOnDeviceAutoMLImageLabelerOptions.Builder(localModel);
+                }
                     FirebaseVisionOnDeviceAutoMLImageLabelerOptions options=optionsBuilder.setConfidenceThreshold(0.5f).build();
                     try{
                         labler=FirebaseVision.getInstance().getOnDeviceAutoMLImageLabeler(options);
@@ -134,7 +140,7 @@ public class Camitem extends AppCompatActivity {
                     catch (FirebaseMLException  exception){
 
                     }
-                }
+
             }
         });
 

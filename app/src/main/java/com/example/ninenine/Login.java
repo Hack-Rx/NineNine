@@ -58,6 +58,13 @@ public class Login extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
         signInButton = findViewById(R.id.signInButton);
+        mCreateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("hey");
+                startActivity(new Intent(getApplicationContext(),SignUp.class));
+            }
+        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -122,12 +129,7 @@ public class Login extends AppCompatActivity {
 
 
 
-        mCreateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),SignUp.class));
-            }
-        });
+
 
 
     }
